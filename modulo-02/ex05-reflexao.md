@@ -1,0 +1,1 @@
+O computador não erra porque apenas executa instruções de forma literal, erros vêm da lógica, dos dados ou de instruções mal definidas. Quem programa deve entender o problema, especificar passos claros e testar para evitar resultados incorretos.
