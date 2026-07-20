@@ -3,6 +3,7 @@ FUNCTION Main()
    LOCAL nIdade
    LOCAL nValor1
    LOCAL nValor2
+   LOCAL nSoma
 
    // ACCEPT lê uma string
    ACCEPT "Digite seu nome: " TO cNome
@@ -13,10 +14,11 @@ FUNCTION Main()
    INPUT "Digite o primeiro valor: " TO nValor1
    INPUT "Digite o segundo valor: " TO nValor2
 
-   Soma := nValor1 + nValor2
+   nSoma := nValor1 + nValor2
    
 
    QOut("Olá, " + cNome + "!")
    QOut("Você tem " + Alltrim(Str(nIdade)) + " anos.")
-   QOut("A soma dos valores é: " + Alltrim(Str(Soma)))
+   QOut("A soma dos valores é: " + Alltrim(Str(nSoma, 10, 2)))
+
 RETURN NIL

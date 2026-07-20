@@ -10,6 +10,7 @@ FUNCTION Main()
    LOCAL nI
    LOCAL nPalpite
    LOCAL lAcertou
+   LOCAL nTecla
 
    nSecreto := HB_RandomInt(1, 100)
    lAcertou := .F.
@@ -43,6 +44,23 @@ FUNCTION Main()
       QOut("            Tente novamente na próxima vez!")
       QOut("--- Não vale tentar adivinhar o número secreto olhando o código fonte! ---")
       QOut(" ")
+   ENDIF
+
+   QOut("Pressione 0 para repetir ou qualquer outra tecla para sair...")
+   nTecla := Inkey(0)
+
+   IF nTecla == 48 // ASCII para '0'
+
+      QOut(" ")
+      QOut("============================================================")
+      QOut("      Reiniciando o jogo...")
+      QOut("      Boa sorte na próxima tentativa!")
+      QOut("============================================================")
+      QOut(" ")
+      Main() // Chama a função novamente para repetir
+
+   ELSE
+      QOut("Saindo da aplicação. Até a próxima!")
    ENDIF
 
    RETURN NIL
