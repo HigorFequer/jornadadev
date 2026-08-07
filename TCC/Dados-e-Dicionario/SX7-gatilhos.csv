@@ -1,0 +1,8 @@
+Tabela;Sequencia;Campo_origem;Campo_destino;Regra;Fase;Condicao;Finalidade
+ZZ1;1;ZZ1_FORNEC;ZZ1_NOMEFO;"POSICIONE(""SA2"",1,xFilial(""SA2"")+M->ZZ1_FORNEC+M->ZZ1_LOJAFO,""A2_NOME"")";3;;Obter o nome do fornecedor
+ZZ1;2;ZZ1_LOJAFO;ZZ1_NOMEFO;"POSICIONE(""SA2"",1,xFilial(""SA2"")+M->ZZ1_FORNEC+M->ZZ1_LOJAFO,""A2_NOME"")";3;;Recalcular o nome depois que a loja for preenchida
+ZZ2;1;ZZ2_CONFOR;ZZ2_FORNEC;"POSICIONE(""ZZ1"",1,xFilial(""ZZ1"")+M->ZZ2_CONFOR,""ZZ1_FORNEC"")";3;;Herdar o codigo do fornecedor do controle selecionado
+ZZ2;2;ZZ2_CONFOR;ZZ2_LOJAFO;"POSICIONE(""ZZ1"",1,xFilial(""ZZ1"")+M->ZZ2_CONFOR,""ZZ1_LOJAFO"")";3;;Herdar a loja do fornecedor do controle selecionado
+ZZ2;3;ZZ2_CONFOR;ZZ2_NOMEFO;"POSICIONE(""SA2"",1,xFilial(""SA2"")+M->ZZ2_FORNEC+M->ZZ2_LOJAFO,""A2_NOME"")";3;;Obter o nome do fornecedor apos herdar codigo e loja
+ZZ2;4;ZZ2_DATA;ZZ2_DATA;"IF(INCLUI,dDataBase,ZZ2->ZZ2_DATA)";3;;Sugerir a data corrente durante a inclusao
+ZZ2;5;ZZ2_HORA;ZZ2_HORA;"IF(INCLUI,Time(),ZZ2->ZZ2_HORA)";3;;Sugerir a hora corrente durante a inclusao

@@ -1,0 +1,7 @@
+Tabela;Ordem;Expressao;Descricao;Chave_primaria;Observacao
+ZZ1;1;ZZ1_FILIAL+ZZ1_CODIGO;Chave primaria;Sim;Usado pela consulta e pelo relacionamento com ZZ2
+ZZ1;2;ZZ1_FILIAL+ZZ1_FORNEC+ZZ1_LOJAFO;Por fornecedor;Nao;Agrupa controles por fornecedor e loja
+ZZ1;3;ZZ1_FILIAL+DTOS(ZZ1_VALCER);Por validade do certificado;Nao;DTOS mantem ordenacao cronologica na chave caractere
+ZZ2;1;ZZ2_FILIAL+ZZ2_CONFOR+DTOS(ZZ2_DATA)+ZZ2_HORA;Chave primaria;Sim;Permite ocorrencias do controle ordenadas por data e hora
+ZZ2;2;ZZ2_FILIAL+ZZ2_FORNEC+ZZ2_LOJAFO+DTOS(ZZ2_DATA);Por fornecedor e data;Nao;Agrupa ocorrencias por fornecedor e loja
+ZZ2;3;ZZ2_FILIAL+DTOS(ZZ2_DATA);Por data;Nao;DTOS mantem ordenacao cronologica na chave caractere

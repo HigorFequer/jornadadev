@@ -1,0 +1,10 @@
+Consulta;Titulo;Tabela;Indice;Ordem_do_campo;Campo;Titulo_da_coluna;Campo_de_retorno;Uso_previsto
+ZZ1;Busca de controle ISO 9001;ZZ1;1;1;ZZ1_CODIGO;Codigo;Sim;F3 do campo ZZ2_CONFOR
+ZZ1;Busca de controle ISO 9001;ZZ1;1;2;ZZ1_NOMEFO;Fornecedor;Nao;F3 do campo ZZ2_CONFOR
+ZZ1;Busca de controle ISO 9001;ZZ1;1;3;ZZ1_VALCER;Validade;Nao;F3 do campo ZZ2_CONFOR
+SA2;Busca de fornecedor;SA2;1;1;A2_COD;Codigo;Sim;F3 do campo ZZ1_FORNEC
+SA2;Busca de fornecedor;SA2;1;2;A2_LOJA;Loja;Nao;F3 do campo ZZ1_FORNEC
+SA2;Busca de fornecedor;SA2;1;3;A2_NOME;Nome;Nao;F3 do campo ZZ1_FORNEC
+SB1;Busca de produto;SB1;1;1;B1_COD;Codigo;Sim;F3 do campo ZZ2_CODPRO
+SB1;Busca de produto;SB1;1;2;B1_DESC;Descricao;Nao;F3 do campo ZZ2_CODPRO
+SB1;Busca de produto;SB1;1;3;B1_UM;Unidade;Nao;F3 do campo ZZ2_CODPRO

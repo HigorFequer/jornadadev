@@ -1,0 +1,24 @@
+Tabela;Ordem;Campo;Titulo;Descricao;Tipo;Tamanho;Decimais;Contexto;Codigo_contexto;Consulta_F3;Validacao_de_usuario;Relacao_ou_formula;Observacao
+ZZ1;01;ZZ1_FILIAL;Filial;Filial do registro;C;2;0;Real;R;;;;Preenchido conforme o compartilhamento configurado para a tabela
+ZZ1;02;ZZ1_CODIGO;Codigo;Codigo do controle de fornecimento;C;6;0;Real;R;;;;Compoe a chave primaria da ZZ1
+ZZ1;03;ZZ1_FORNEC;Cod. Fornecedor;Codigo do fornecedor;C;6;0;Real;R;SA2;!Empty(M->ZZ1_FORNEC);;A chave completa e validada depois do preenchimento da loja
+ZZ1;04;ZZ1_LOJAFO;Loja Fornecedor;Loja do fornecedor;C;2;0;Real;R;SA2;U_STTZZ1FOR();;Valida fornecedor e loja na SA2 usando ExistCpo na rotina
+ZZ1;05;ZZ1_NOMEFO;Nome Fornecedor;Nome do fornecedor;C;40;0;Virtual;V;;;"POSICIONE(""SA2"",1,xFilial(""SA2"")+M->ZZ1_FORNEC+M->ZZ1_LOJAFO,""A2_NOME"")";Nao cria coluna fisica na ZZ1
+ZZ1;06;ZZ1_CERTIF;Dados Certificado;Dados e observacoes do certificado;C;256;0;Real;R;;;;
+ZZ1;07;ZZ1_VALCER;Val. Certificado;Data de validade do certificado;D;8;0;Real;R;;U_STTZZ1CER();;Na inclusao nao permite validade anterior a data atual
+ZZ1;08;ZZ1_TOLERA;Tolerancia (%);Percentual maximo tolerado de nao conformidade;N;5;2;Real;R;;U_STTZZ1TOL();;Faixa inclusiva de zero a cem
+ZZ1;09;ZZ1_TOTOK;Qtd. Conforme;Quantidade total conforme;N;12;2;Real;R;;;;
+ZZ1;10;ZZ1_TOTNOK;Qtd. Nao Conforme;Quantidade total nao conforme;N;12;2;Real;R;;;;
+ZZ2;01;ZZ2_FILIAL;Filial;Filial do registro;C;2;0;Real;R;;;;Preenchido conforme o compartilhamento configurado para a tabela
+ZZ2;02;ZZ2_CONFOR;Controle;Codigo do controle de fornecimento da ZZ1;C;6;0;Real;R;ZZ1;U_STTZZ2CTL();U_STTZZ2DEF();Chave estrangeira logica para ZZ1 e inicializacao no browse filtrado
+ZZ2;03;ZZ2_FORNEC;Cod. Fornecedor;Codigo do fornecedor herdado da ZZ1;C;6;0;Real;R;SA2;;;Preenchido pelo gatilho de ZZ2_CONFOR
+ZZ2;04;ZZ2_LOJAFO;Loja Fornecedor;Loja do fornecedor herdada da ZZ1;C;2;0;Real;R;SA2;;;Preenchido pelo gatilho de ZZ2_CONFOR
+ZZ2;05;ZZ2_NOMEFO;Nome Fornecedor;Nome do fornecedor;C;40;0;Virtual;V;;;"POSICIONE(""SA2"",1,xFilial(""SA2"")+M->ZZ2_FORNEC+M->ZZ2_LOJAFO,""A2_NOME"")";Nao cria coluna fisica na ZZ2
+ZZ2;06;ZZ2_DATA;Data Ocorrencia;Data da ocorrencia;D;8;0;Real;R;;U_STTZZ2DAT();;Preenchida com dDataBase na inclusao pelo gatilho
+ZZ2;07;ZZ2_HORA;Hora;Hora da ocorrencia no formato HH:MM;C;5;0;Real;R;;;;Preenchida com Time() na inclusao pelo gatilho
+ZZ2;08;ZZ2_CODPRO;Produto;Codigo do produto;C;15;0;Real;R;SB1;U_STTZZ2PRO();;Validacao referencial com a SB1 e usa ExistCpo na rotina
+ZZ2;09;ZZ2_QTDOK;Qtd. Conforme;Quantidade conforme na ocorrencia;N;12;0;Real;R;;M->ZZ2_QTDOK>=0;;A validacao conjunta ocorre ao informar a quantidade nao conforme
+ZZ2;10;ZZ2_QTDNOK;Qtd. Nao Conforme;Quantidade nao conforme na ocorrencia;N;12;0;Real;R;;U_STTZZ2QTD();;Exige quantidades nao negativas e soma maior que zero
+ZZ2;11;ZZ2_VLRUNI;Valor Unitario;Valor unitario do produto;N;12;2;Real;R;;U_STTZZ2VLR();;Nao aceita valor negativo
+ZZ2;12;ZZ2_TOTOK;R$ Conforme;Valor total conforme;N;12;2;Virtual;V;;;M->ZZ2_QTDOK*M->ZZ2_VLRUNI;Nao cria coluna fisica na ZZ2
+ZZ2;13;ZZ2_TOTNOK;R$ Nao Conforme;Valor total nao conforme;N;12;2;Virtual;V;;;M->ZZ2_QTDNOK*M->ZZ2_VLRUNI;Nao cria coluna fisica na ZZ2

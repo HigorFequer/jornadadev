@@ -1,0 +1,3 @@
+Tabela;Descricao;Modo_de_acesso;Arquivo_fisico_de_referencia;Chave_unica_logica;Observacao
+ZZ1;Controle de Fornecimento;Compartilhado;ZZ1990;ZZ1_FILIAL+ZZ1_CODIGO;O arquivo DBF deve ser criado pelo Protheus no ambiente de destino
+ZZ2;Ocorrencias do Fornecedor;Compartilhado;ZZ2990;ZZ2_FILIAL+ZZ2_CONFOR+DTOS(ZZ2_DATA)+ZZ2_HORA;O arquivo DBF deve ser criado pelo Protheus no ambiente de destino

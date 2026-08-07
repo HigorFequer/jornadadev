@@ -1,0 +1,3 @@
+Modulo;Menu_pai;Submenu;Titulo;Tipo;Programa;Ordem;Observacao
+SIGACOM;Cadastros;Controle ISO 9001;Controle de Fornecimento (ZZ1);USER FUNCTION;STTZZ1;1;Aponta para a rotina de manutencao da ZZ1
+SIGACOM;Cadastros;Controle ISO 9001;Ocorrencias de Fornecedores (ZZ2);USER FUNCTION;STTZZ2;2;Aponta para a rotina de manutencao da ZZ2
